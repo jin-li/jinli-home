@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!--
+      Don't know why, but if using an existing favicon.ico in index.html, 
+      the one defined in index.tsx will not work.
+    -->
+    <link id="favicon" rel="icon" href="%PUBLIC_URL%/favicon-non-exist.ico" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta

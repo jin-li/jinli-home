@@ -4,7 +4,7 @@ import SwapButton from './components/SwapButton/SwapButton';
 import TimeBox from './components/TimeBox/TimeBox';
 import Logo from './components/Logo/Logo';
 import Description from './components/Description/Description';
-import SocialLinks from './components/Socials/Socials';
+import Socials from './components/Socials/Socials';
 import Links from './components/Links/Links';
 
 const App: React.FC = () => {
@@ -30,7 +30,7 @@ const App: React.FC = () => {
           <Description
             descriptionText={{ slogan: "光锥之内，皆为命运。", hello: "既是相见，即为有缘。欢迎光临本站！" }}
           />
-          <SocialLinks />
+          <Socials />
         </div>
         <div className={`${styles.panel} ${isMobile && showLeft ? styles.hidden : ''}`}>
           <TimeBox />
