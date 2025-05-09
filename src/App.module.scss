@@ -1,9 +1,9 @@
 @import './styles/variables';
 
 .container {
-  height: calc(var(--vh, 1vh) * 100); // use dynamic viewport height
+  height: 100vh; // Use full viewport height for desktop screens
   width: 100vw;
-  overflow: hidden;
+  overflow: hidden; // Prevent horizontal scrolling
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,27 +12,37 @@
   background-size: cover;
   background-attachment: fixed;
   position: relative;
+
+  &.landscape {
+    height: auto; // Allow content to determine height in landscape mode
+    overflow: auto; // Enable scrolling for landscape mode on mobile
+  }
 }
 
 .panels {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  flex: auto;
-  //border: 1px solid red; // uncomment for debugging
+  flex: 1; // Ensure panels take up available vertical space
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    width: 100%;
+  }
 }
 
 .panel {
-  flex: auto;
+  flex: 0 0 50%; // Each panel takes 50% of the width on larger screens
   max-width: 500px;
   min-width: 300px;
   text-align: center;
   justify-content: center;
-  //border: 1px solid green; // uncomment debugging
 
-  @media (max-width: $mobile-breakpoint) {
-    width: 90%;
+  @media (max-width: 768px) {
+    flex: 0 0 100%; // Full width on mobile
+    width: 100%;
   }
 }
 

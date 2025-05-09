@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Socials.module.scss";
 import socialLinks from "../../assets/socials.json";
-import { FaGithub, FaGoogleScholar, FaLinkedin, FaBilibili, FaEnvelope } from "react-icons/fa6";
+import { FaGithub, FaGoogleScholar, FaLinkedin, FaBilibili, FaYoutube, FaEnvelope } from "react-icons/fa6";
 
 interface Social {
   label: string;
@@ -16,6 +16,7 @@ const iconMap: { [key: string]: React.ReactNode } = {
   "googlescholar": <FaGoogleScholar />,
   "linkedin": <FaLinkedin />,
   "bilibili": <FaBilibili />,
+  "youtube": <FaYoutube />,
   "email": <FaEnvelope />,
 };
 

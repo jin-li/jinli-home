@@ -1,43 +1,57 @@
 import React, { useEffect, useState } from 'react';
 import styles from './App.module.scss';
 import SwapButton from './components/SwapButton/SwapButton';
-import TimeBox from './components/TimeBox/TimeBox';
-import Logo from './components/Logo/Logo';
-import Description from './components/Description/Description';
-import Socials from './components/Socials/Socials';
-import Links from './components/Links/Links';
+import LeftPanel from './view/LeftPanel/LeftPanel';
+import RightPanel from './view/RightPanel/RightPanel';
 
 const App: React.FC = () => {
   const [showLeft, setShowLeft] = useState(true);
-  const isMobile = window.innerWidth < 768;
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isLandscape, setIsLandscape] = useState(window.innerWidth > window.innerHeight);
 
-  // Fix for mobile viewport height
+  // Handle screen resize and viewport height adjustment
   useEffect(() => {
-    const setVh = () => {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    const handleResize = () => {
+      // Update isMobile state
+      setIsMobile(window.innerWidth < 768);
+
+      // Update orientation state
+      setIsLandscape(window.innerWidth > window.innerHeight);
+
+      // Fix mobile viewport height issue for portrait mode
+      if (window.innerWidth < window.innerHeight) {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      } else {
+        document.documentElement.style.removeProperty('--vh'); // Remove the custom property in landscape mode
+      }
     };
-    setVh();
-    window.addEventListener('resize', setVh);
-    return () => window.removeEventListener('resize', setVh);
+
+    // Set initial viewport height and isMobile state
+    handleResize();
+
+    // Add event listener for resize
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${isMobile && isLandscape ? styles.landscape : ''}`}
+    >
       <div className={styles.panels}>
+        {/* Show LeftPanel or hide it based on `isMobile` and `showLeft` */}
         <div className={`${styles.panel} ${isMobile && !showLeft ? styles.hidden : ''}`}>
-          <Logo siteLogo={'avatar.jpg'} />
-          <Description
-            descriptionText={{ slogan: "光锥之内，皆为命运。", hello: "既是相见，即为有缘。欢迎光临本站！" }}
-          />
-          <Socials />
+          <LeftPanel />
         </div>
+
+        {/* Show RightPanel or hide it based on `isMobile` and `showLeft` */}
         <div className={`${styles.panel} ${isMobile && showLeft ? styles.hidden : ''}`}>
-          <TimeBox />
-          <Links />
+          <RightPanel />
         </div>
       </div>
 
+      {/* Show SwapButton only on mobile */}
       {isMobile && <SwapButton onSwap={() => setShowLeft(!showLeft)} />}
 
       <footer className={styles.footer}>
