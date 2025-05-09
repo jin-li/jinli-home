@@ -1,0 +1,88 @@
+.social {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  margin: 1rem auto;
+  height: 42px;
+  background-color: transparent;
+  border-radius: 6px;
+  //border: 1px solid yellow; // Uncomment for debugging
+  animation: fade 0.5s;
+  transition:
+    background-color 0.3s;
+
+  @media (max-width: 840px) {
+    max-width: 100%;
+    justify-content: center;
+
+    .link {
+      justify-content: space-evenly !important;
+      width: 90%;
+    }
+
+    .tip {
+      display: none !important;
+    }
+  }
+
+  .link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .icon {
+        display: flex;
+        font-size: x-large;
+        color: white;
+        margin: 0 5px;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        &:active {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .tip {
+    display: none;
+    margin-right: 12px;
+    animation: fade 0.5s;
+    color: white;
+    font-size: large;
+  }
+
+  @media (min-width: 768px) {
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+
+      .tip {
+        display: block;
+      }
+    }
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

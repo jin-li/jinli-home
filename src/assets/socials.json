@@ -1,0 +1,37 @@
+[
+  {
+    "label": "github",
+    "name": "Github",
+    "icon": "/images/icon/github.png",
+    "tip": "看看有啥炫酷的项目 ~",
+    "url": "https://github.com/jin-li"
+  },
+  {
+    "label": "googlescholar",
+    "name": "Google Scholar",
+    "icon": "/images/icon/google-scholar.png",
+    "tip": "我爱科研，科研使我快乐 ~",
+    "url": "https://scholar.google.com/citations?user=TlaZPfoAAAAJ&hl=en&authuser=2"
+  },
+  {
+    "label": "linkedin",
+    "name": "LinkedIn",
+    "icon": "/images/icon/linkedin.png",
+    "tip": "有啥好工作记得找我 ~",
+    "url": "https://www.linkedin.com/in/jinli-io/"
+  },
+  {
+    "label": "bilibili",
+    "name": "BiliBili",
+    "icon": "/images/icon/bilibili.png",
+    "tip": "(゜-゜)つロ 干杯 ~",
+    "url": "https://space.bilibili.com/3493275403028517"
+  },
+  {
+    "label": "email",
+    "name": "Email",
+    "icon": "/images/icon/email.png",
+    "tip": "有事欢迎联系 ~",
+    "url": "mailto:i@jinli.io"
+  }
+]

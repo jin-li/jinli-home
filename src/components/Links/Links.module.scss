@@ -1,0 +1,98 @@
+.wrapper {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0);
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+  margin-bottom: 1rem;
+  // border: 1px solid black; // Uncomment for debugging
+  
+  .slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 200px; // fixed height for carousel slide
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
+    width: 90%;
+    height: 100%;
+  }
+
+  .tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 6px;
+    max-height: 90px;
+    margin: 0.25rem;
+    &:hover {
+      background: rgba(155, 155, 155, 0.3);
+      transform: scale(1.1);
+    }
+
+    .icon {
+      font-size: 2rem;
+      color: white;
+    }
+
+    .label {
+      color: white;
+      font-size: larger;
+    }
+  }
+}
+
+.carousel {
+  position: relative;
+
+  :global {          // must use global so that it applies to the slick class
+    .slick-prev,
+    .slick-next {
+      z-index: 2;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      font-weight: bolder;
+      color: white;
+      border-radius: 50%;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slick-prev {
+      left: -5px;
+      top: 110px;
+    }
+
+    .slick-next {
+      right: -25px;
+      top: 110px;
+    }
+
+    .slick-dots {
+      bottom: -20px;
+
+      li button {
+        background: gray !important;
+      }
+
+      li.slick-active button {
+        background: #1890ff !important;
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    max-width: 300px;
+  }
+}

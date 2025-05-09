@@ -1,0 +1,53 @@
+@import './styles/variables';
+
+.container {
+  height: calc(var(--vh, 1vh) * 100); // use dynamic viewport height
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url('./assets/bg.jpg') center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.panels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex: auto;
+  //border: 1px solid red; // uncomment for debugging
+}
+
+.panel {
+  flex: auto;
+  max-width: 500px;
+  min-width: 300px;
+  text-align: center;
+  justify-content: center;
+  //border: 1px solid green; // uncomment debugging
+
+  @media (max-width: $mobile-breakpoint) {
+    width: 90%;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.75rem;
+  font-size: 0.8rem;
+  color: $secondary-color;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
