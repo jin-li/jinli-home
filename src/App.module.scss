@@ -1,21 +1,33 @@
-@import './styles/variables';
+@use './styles/variables' as vars;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box; /* Ensure consistent box model */
+}
 
 .container {
-  height: 100vh; // Use full viewport height for desktop screens
+  height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh; // Ensure full height on mobile
   width: 100vw;
-  overflow: hidden; // Prevent horizontal scrolling
+  overflow: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  background: url('./assets/bg.jpg') center center no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   position: relative;
+  margin: 0;
+  padding: 0;
+  //border: 1px solid red;
 
   &.landscape {
-    height: auto; // Allow content to determine height in landscape mode
-    overflow: auto; // Enable scrolling for landscape mode on mobile
+    height: calc(var(--vh, 1vh) * 100); // Same for landscape mode
+    overflow: hidden; // Enable scrolling for landscape mode on mobile
   }
 }
 
@@ -50,14 +62,13 @@
   display: none;
 }
 
+
+
 .footer {
   width: 100%;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.15);
   padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  text-align: center;
   font-size: 0.8rem;
-  color: $secondary-color;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  color: vars.$secondary-color;
 }

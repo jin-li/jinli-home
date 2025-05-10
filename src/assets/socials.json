@@ -28,6 +28,13 @@
     "url": "https://space.bilibili.com/3493275403028517"
   },
   {
+    "label": "youtube",
+    "name": "Youtube",
+    "icon": "/images/icon/youtube.png",
+    "tip": "看会儿视频 ~",
+    "url": "https://www.youtube.com/@JinLi-233"
+  },
+  {
     "label": "email",
     "name": "Email",
     "icon": "/images/icon/email.png",

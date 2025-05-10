@@ -7,7 +7,7 @@ import styles from './LeftPanel.module.scss';
 const LeftPanel: React.FC = () => {
   return (
     <div className={styles.panel}>
-      <Logo siteLogo={'avatar.jpg'} />
+      <Logo siteLogo={'./assets/avatar.jpg'} />
       <Description
         descriptionText={{
           slogan: "光锥之内，皆为命运。",

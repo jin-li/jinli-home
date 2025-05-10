@@ -35,9 +35,27 @@ const App: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+  
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const backgroundUrl = './assets/bg.jpg';
+  const containerStyle = {
+    background: `url(${backgroundUrl}) no-repeat center center`,
+    backgroundSize: 'cover',
+  };
+
   return (
     <div
       className={`${styles.container} ${isMobile && isLandscape ? styles.landscape : ''}`}
+      style={containerStyle}
     >
       <div className={styles.panels}>
         {/* Show LeftPanel or hide it based on `isMobile` and `showLeft` */}
