@@ -1,8 +1,10 @@
 import React from 'react';
 import { Carousel } from 'antd';
-import linkItems from "../../assets/links.json";
 import { FaBlog, FaCloud, FaGitlab, FaClapperboard, FaBook, FaImages, FaPen, FaEnvelopesBulk, FaAnglesUp, FaServer } from "react-icons/fa6";
 import styles from "./Links.module.scss";
+import config from "../../config/config.yml";
+
+const links = config.links;
 
 const ITEMS_PER_PAGE = 6;
 
@@ -21,8 +23,8 @@ const iconMap: { [key: string]: React.ReactNode } = {
 
 const Links: React.FC = () => {
   // Split items into pages of 6
-  const pages = Array.from({ length: Math.ceil(linkItems.length / ITEMS_PER_PAGE) }, (_, i) =>
-    linkItems.slice(i * ITEMS_PER_PAGE, (i + 1) * ITEMS_PER_PAGE)
+  const pages = Array.from({ length: Math.ceil(links.length / ITEMS_PER_PAGE) }, (_, i) =>
+    links.slice(i * ITEMS_PER_PAGE, (i + 1) * ITEMS_PER_PAGE)
   );
 
   return (
@@ -36,7 +38,7 @@ const Links: React.FC = () => {
         {pages.map((page, pageIndex) => (
           <div className={styles.slide} key={pageIndex}>
             <div className={styles.grid}>
-              {page.map((item, idx) => (
+              {page.map((item: any, idx: any) => (
                 <a
                   className={styles.tile}
                   key={idx}

@@ -3,16 +3,14 @@ import Logo from '../../components/Logo/Logo';
 import Description from '../../components/Description/Description';
 import Socials from '../../components/Socials/Socials';
 import styles from './LeftPanel.module.scss';
+import config from '../../config/config.yml';
 
 const LeftPanel: React.FC = () => {
   return (
     <div className={styles.panel}>
-      <Logo siteLogo={'./assets/avatar.jpg'} />
+      <Logo siteLogo={config.logo.avatar} />
       <Description
-        descriptionText={{
-          slogan: "光锥之内，皆为命运。",
-          hello: "既是相见，即为有缘。欢迎光临本站！",
-        }}
+        descriptionText={config.description}
       />
       <Socials />
     </div>

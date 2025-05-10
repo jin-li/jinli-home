@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import styles from "./Socials.module.scss";
-import socialLinks from "../../assets/socials.json";
 import { FaGithub, FaGoogleScholar, FaLinkedin, FaBilibili, FaYoutube, FaEnvelope } from "react-icons/fa6";
+import config from "../../config/config.yml";
+
+const socials = config.socials;
 
 interface Social {
   label: string;
@@ -28,7 +30,7 @@ const Socials: React.FC = () => {
   return (
     <div className={styles.social}>
       <div className={styles.link}>
-        {socialLinks.map((item: Social) => (
+        {socials.map((item: Social) => (
           <a
             key={item.name}
             href={item.url}
