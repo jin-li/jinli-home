@@ -3,6 +3,7 @@ import styles from './App.module.scss';
 import SwapButton from './components/SwapButton/SwapButton';
 import LeftPanel from './view/LeftPanel/LeftPanel';
 import RightPanel from './view/RightPanel/RightPanel';
+import config from './config/config.yml';
 
 const App: React.FC = () => {
   const [showLeft, setShowLeft] = useState(true);
@@ -46,7 +47,7 @@ const App: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const backgroundUrl = './assets/bg.jpg';
+  const backgroundUrl = config.site.background || './assets/bg.jpg'; // Default background image
   const containerStyle = {
     background: `url(${backgroundUrl}) no-repeat center center`,
     backgroundSize: 'cover',
@@ -73,7 +74,7 @@ const App: React.FC = () => {
       {isMobile && <SwapButton onSwap={() => setShowLeft(!showLeft)} />}
 
       <footer className={styles.footer}>
-        Copyright © 2021 - 2025 锦李本鲤
+        Copyright © {config.footer.start_year} - {new Date().getFullYear()} {config.footer.author}
       </footer>
     </div>
   );

@@ -1,0 +1,88 @@
+site:
+  title: '锦李本鲤'
+  author: '锦李本鲤'                           # 网站作者，用于meta标签
+  description: '锦鲤的个人主页'                 # 网站描述，用于meta标签
+  keywords: '锦李本鲤,个人主页'                 # 网站关键词，用于meta标签
+  favicon: './assets/favicon.ico'             # 网站标签栏图标，位于public/assets目录中
+  apple_touch_icon: './assets/logo192.png'    # 苹果设备将网站添加到主屏幕时的图标
+  background: './assets/bg.jpg'
+logo:
+  avatar: './assets/avatar.jpg'               # 头像
+description:
+  slogan: '光锥之内，皆为命运。'
+  hello: '既是相逢，即为有缘。欢迎光临本站！'
+footer:
+  start_year: 2021                             # 网站创建年份，显示于页脚
+  author: '锦李本鲤'                            # 显示于页脚的作者名，可与meta标签中的作者名不同
+socials:
+  - label: github
+    name: Github
+    icon: "/images/icon/github.png"
+    tip: 看看有啥炫酷的项目 ~
+    url: https://github.com/jin-li
+  - label: googlescholar
+    name: Google Scholar
+    icon: "/images/icon/google-scholar.png"
+    tip: 我爱科研，科研使我快乐 ~
+    url: https://scholar.google.com/citations?user=TlaZPfoAAAAJ&hl=en&authuser=2
+  - label: linkedin
+    name: LinkedIn
+    icon: "/images/icon/linkedin.png"
+    tip: 有啥好工作记得找我 ~
+    url: https://www.linkedin.com/in/jinli-io/
+  - label: bilibili
+    name: BiliBili
+    icon: "/images/icon/bilibili.png"
+    tip: "(゜-゜)つロ 干杯 ~"
+    url: https://space.bilibili.com/3493275403028517
+  - label: youtube
+    name: Youtube
+    icon: "/images/icon/youtube.png"
+    tip: 看会儿视频 ~
+    url: https://www.youtube.com/@JinLi-233
+  - label: email
+    name: Email
+    icon: "/images/icon/email.png"
+    tip: 有事欢迎联系 ~
+    url: mailto:i@jinli.io
+links:
+  - label: blog
+    name: 博客
+    icon: FaBlog
+    url: https://blog.jinli.io
+  - label: cloud
+    name: 云网盘
+    icon: FaCloud
+    url: https://cloud.jinli.io
+  - label: git
+    name: 代码库
+    icon: FaGitlab
+    url: https://git.jinli.io
+  - label: media
+    name: 影视
+    icon: FaClapperboard
+    url: https://m.jinli.io
+  - label: library
+    name: 书架
+    icon: FaBook
+    url: https://book.jinli.io
+  - label: image
+    name: 图床
+    icon: FaImages
+    url: https://img.jinli.io
+  - label: latex
+    name: LaTeX
+    icon: FaPen
+    url: https://overleaf.jinli.io
+  - label: mail
+    name: 邮箱
+    icon: FaEnvelopesBulk
+    url: https://mail.jinli.io/
+  - label: update
+    name: 更新
+    icon: FaAnglesUp
+    url: https://wud.jinli.io
+  - label: monitor
+    name: 站点监测
+    icon: FaServer
+    url: https://portainer.jinli.io
