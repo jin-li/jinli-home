@@ -10,7 +10,7 @@ logo:
   avatar: './assets/avatar.jpg'               # 头像
 description:
   slogan: '光锥之内，皆为命运。'
-  hello: '既是相逢，即为有缘。欢迎光临本站！'
+  hello: '相逢即是有缘，欢迎光临本站！'
 footer:
   start_year: 2021                             # 网站创建年份，显示于页脚
   author: '锦李本鲤'                            # 显示于页脚的作者名，可与meta标签中的作者名不同
