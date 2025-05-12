@@ -1,0 +1,19 @@
+@use '../../styles/variables' as vars;
+
+.footer {
+  width: 100%;
+  padding: 0.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: vars.$secondary-color;
+  height: min-content;
+
+  .copyright {
+    font-size: smaller;
+    margin-right: 1rem;
+  }
+
+  .design {
+    font-size: x-small;
+  }
+}
