@@ -4,6 +4,7 @@ import SwapButton from './components/SwapButton/SwapButton';
 import LeftPanel from './view/LeftPanel/LeftPanel';
 import RightPanel from './view/RightPanel/RightPanel';
 import config from './config/config.yml';
+import Footer from './components/Footer/Footer';
 
 const App: React.FC = () => {
   const [showLeft, setShowLeft] = useState(true);
@@ -73,9 +74,7 @@ const App: React.FC = () => {
       {/* Show SwapButton only on mobile */}
       {isMobile && <SwapButton onSwap={() => setShowLeft(!showLeft)} />}
 
-      <footer className={styles.footer}>
-        Copyright © {config.footer.start_year} - {new Date().getFullYear()} {config.footer.author}
-      </footer>
+      <Footer startYear={config.footer.start_year} author={config.footer.author} />
     </div>
   );
 };
