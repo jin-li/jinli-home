@@ -17,23 +17,27 @@
     align-items: start;
     gap: 0.5rem;
     color: white;
+    //border: 1px solid red;
 
     .quote {
       color: rgba(255, 255, 255, 0.8);
       margin-top: 0.2rem;
+    }
 
-      &.left {
-        align-self: start;
-      }
+    .left {
+      align-self: start;
+      //border: 1px solid green;
+    }
 
-      &.right {
-        align-self: end;
-      }
+    .right {
+      align-self: end;
+      //border: 1px solid green;
     }
 
     .text {
       font-size: 1.2rem;
       line-height: 1.8rem;
+      //border: 1px solid blue;
 
       p:first-child {
         font-size: 1.5rem;
