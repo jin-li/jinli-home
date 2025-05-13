@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styles from "./Socials.module.scss";
 import { FaGithub, FaGoogleScholar, FaLinkedin, FaBilibili, FaYoutube, FaEnvelope } from "react-icons/fa6";
-import config from "../../config/config.yml";
+import { getConfig } from "../../getConfig";
 
+const config = getConfig();
 const socials = config.socials;
 
 interface Social {
