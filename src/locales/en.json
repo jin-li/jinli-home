@@ -1,0 +1,6 @@
+{
+  "footer": {
+    "copyright": "Copyright © {{startYear}} - {{currentYear}} {{author}}",
+    "designedBy": "Designed by"
+  }
+}

@@ -3,10 +3,11 @@ import styles from './App.module.scss';
 import SwapButton from './components/SwapButton/SwapButton';
 import LeftPanel from './view/LeftPanel/LeftPanel';
 import RightPanel from './view/RightPanel/RightPanel';
-import config from './config/config.yml';
 import Footer from './components/Footer/Footer';
+import { getConfig } from './getConfig';
 
 const App: React.FC = () => {
+  const config = getConfig();
   const [showLeft, setShowLeft] = useState(true);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isLandscape, setIsLandscape] = useState(window.innerWidth > window.innerHeight);

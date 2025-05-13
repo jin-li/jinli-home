@@ -1,9 +1,12 @@
+import './i18n.ts';
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import config from './config/config.yml';
+import { getConfig } from './getConfig.ts';
+
+const config = getConfig();
 
 createRoot(document.getElementById('root')!).render(
   <HelmetProvider>

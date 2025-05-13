@@ -2,8 +2,9 @@ import React from 'react';
 import { Carousel } from 'antd';
 import { FaBlog, FaCloud, FaGitlab, FaClapperboard, FaBook, FaImages, FaPen, FaEnvelopesBulk, FaAnglesUp, FaServer } from "react-icons/fa6";
 import styles from "./Links.module.scss";
-import config from "../../config/config.yml";
+import { getConfig } from "../../getConfig";
 
+const config = getConfig();
 const links = config.links;
 
 const ITEMS_PER_PAGE = 6;
