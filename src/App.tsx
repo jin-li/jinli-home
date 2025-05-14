@@ -62,7 +62,7 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        {isMobile && <SwapButton onSwap={() => setShowLeft(!showLeft)} />}
+        {isMobile && <SwapButton onSwap={() => setShowLeft(!showLeft)} showLeft={showLeft} />}
 
         <Footer startYear={t('start_year', {ns: 'footer'})} author={t('author', {ns: 'footer'})} />
       </div>
