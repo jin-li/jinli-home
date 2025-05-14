@@ -1,0 +1,9 @@
+{
+  "title": "锦李本鲤",
+  "author": "锦李本鲤",
+  "description": "锦鲤的个人主页",
+  "keywords": ["锦李本鲤","个人主页"],
+  "favicon": "./assets/favicon.ico",
+  "apple_touch_icon": "./assets/logo192.png",
+  "background": "./assets/bg.jpg"
+}

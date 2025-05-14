@@ -1,0 +1,64 @@
+{
+  "links": [
+    {
+      "label": "blog",
+      "name": "博客",
+      "icon": "FaBlog",
+      "url": "https://blog.jinli.io"
+    },
+    {
+      "label": "cloud",
+      "name": "云网盘",
+      "icon": "FaCloud",
+      "url": "https://cloud.jinli.io"
+    },
+    {
+      "label": "git",
+      "name": "代码库",
+      "icon": "FaGitlab",
+      "url": "https://git.jinli.io"
+    },
+    {
+      "label": "media",
+      "name": "影视",
+      "icon": "FaClapperboard",
+      "url": "https://m.jinli.io"
+    },
+    {
+      "label": "library",
+      "name": "书架",
+      "icon": "FaBook",
+      "url": "https://book.jinli.io"
+    },
+    {
+      "label": "image",
+      "name": "图床",
+      "icon": "FaImages",
+      "url": "https://img.jinli.io"
+    },
+    {
+      "label": "latex",
+      "name": "LaTeX",
+      "icon": "FaPen",
+      "url": "https://overleaf.jinli.io"
+    },
+    {
+      "label": "mail",
+      "name": "邮箱",
+      "icon": "FaEnvelopesBulk",
+      "url": "https://mail.jinli.io/"
+    },
+    {
+      "label": "update",
+      "name": "更新",
+      "icon": "FaAnglesUp",
+      "url": "https://wud.jinli.io"
+    },
+    {
+      "label": "monitor",
+      "name": "站点监测",
+      "icon": "FaServer",
+      "url": "https://portainer.jinli.io"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+    "title": "Jin Li",
+    "author": "Jin Li",
+    "description": "Jin Li homepage",
+    "keywords": ["Jin Li","homepage"],
+    "favicon": "./assets/favicon.ico",
+    "apple_touch_icon": "./assets/logo192.png",
+    "background": "./assets/bg.jpg"
+  }

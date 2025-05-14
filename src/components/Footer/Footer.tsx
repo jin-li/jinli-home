@@ -3,21 +3,21 @@ import { useTranslation } from "react-i18next";
 import styles from "./Footer.module.scss";
 
 interface FooterProps {
-  startYear: number;
+  startYear: string;
   author: string;
 }
 
 const Footer: React.FC<FooterProps> = ({ startYear, author }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('ui');
   const currentYear = new Date().getFullYear();
 
   return (
     <div className={styles.footer}>
       <span className={styles.copyright}>
-        {t("footer.copyright", { startYear, currentYear, author})}
+        {t("copyright", { startYear, currentYear, author})}
       </span>
       <span className={styles.design}>
-        {t("footer.designedBy")}{" "}
+        {t("designed_by")}{" "}
         <a
           href="https://github.com/jin-li"
           target="_blank"

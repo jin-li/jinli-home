@@ -2,10 +2,7 @@ import React from 'react';
 import { Carousel } from 'antd';
 import { FaBlog, FaCloud, FaGitlab, FaClapperboard, FaBook, FaImages, FaPen, FaEnvelopesBulk, FaAnglesUp, FaServer } from "react-icons/fa6";
 import styles from "./Links.module.scss";
-import { getConfig } from "../../getConfig";
-
-const config = getConfig();
-const links = config.links;
+import { useTranslation } from "react-i18next";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -23,6 +20,16 @@ const iconMap: { [key: string]: React.ReactNode } = {
 };
 
 const Links: React.FC = () => {
+
+  const { t } = useTranslation('links');
+
+  const links = t('links', { returnObjects: true }) as Array<{
+    label: string;
+    name: string;
+    icon: string;
+    url: string;
+  }>;
+
   // Split items into pages of 6
   const pages = Array.from({ length: Math.ceil(links.length / ITEMS_PER_PAGE) }, (_, i) =>
     links.slice(i * ITEMS_PER_PAGE, (i + 1) * ITEMS_PER_PAGE)
