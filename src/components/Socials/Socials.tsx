@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Socials.module.scss";
 import { FaGithub, FaGoogleScholar, FaLinkedin, FaBilibili, FaYoutube, FaEnvelope } from "react-icons/fa6";
-import { getConfig } from "../../getConfig";
-
-const config = getConfig();
-const socials = config.socials;
+import { useTranslation } from "react-i18next";
 
 interface Social {
   label: string;
@@ -23,9 +20,10 @@ const iconMap: { [key: string]: React.ReactNode } = {
   "email": <FaEnvelope />,
 };
 
-//<img className={styles.icon} src={item.icon} alt={item.name} />
-
 const Socials: React.FC = () => {
+  const { t } = useTranslation(['socials']);
+  const socials = t('socials', { returnObjects: true }) as Array<Social>;
+
   const [socialTip, setSocialTip] = useState("");
 
   return (
