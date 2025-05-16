@@ -6,14 +6,48 @@
   background: rgba(255, 255, 255, 0.1);
   text-align: center;
   color: vars.$secondary-color;
-  height: min-content;
+  height: 2rem;
+
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Vertically align items */
+  justify-content: center; /* Center items horizontally */
+  gap: 0.5rem; /* Add spacing between items */
 
   .copyright {
     font-size: smaller;
-    margin-right: 1rem;
+    //border: 1px solid red; // Debugging purpose
   }
 
   .design {
     font-size: x-small;
+    //border: 1px solid red; // Debugging purpose
+  }
+
+  .languageSwitcher {
+    background: transparent;
+    border: none;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically align icon and text */
+    justify-content: center; /* Center icon and text horizontally */
+    gap: 0.2rem; /* Add spacing between icon and text */
+    padding: 0rem; /* Add padding for better touch target */
+    cursor: pointer;
+    //border: 1px solid red; // Debugging purpose
+
+    .icon {
+      color: white; /* White color for the icon */
+      display: flex; /* Ensure the icon is treated as a flex item */
+      align-items: center; /* Center the icon vertically */
+    }
+
+    .text {
+      color: #7fb7e4;
+      font-size: 1rem;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #7fabfc;
+      }
+    }
   }
 }

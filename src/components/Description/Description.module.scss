@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  width: 85% ;
+  width: 88% ;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
@@ -35,16 +35,18 @@
     }
 
     .text {
-      font-size: 1.2rem;
+      //font-size: 1.2rem;
       line-height: 1.8rem;
       //border: 1px solid blue;
 
       p:first-child {
-        font-size: 1.5rem;
+        font-size: x-large;
+        font-weight: bold;
         margin: 0;
       }
 
       p:last-child {
+        font-size: larger;
         margin: 0.5rem 0 0 0;
       }
     }
