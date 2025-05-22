@@ -14,15 +14,9 @@
   .block {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    align-items: start;
     gap: 0.5rem;
     color: white;
     //border: 1px solid red;
-
-    .quote {
-      color: rgba(255, 255, 255, 0.8);
-      margin-top: 0.2rem;
-    }
 
     .left {
       align-self: start;
@@ -35,8 +29,8 @@
     }
 
     .text {
-      //font-size: 1.2rem;
       line-height: 1.8rem;
+      text-align: center;
       //border: 1px solid blue;
 
       p:first-child {
@@ -51,8 +45,4 @@
       }
     }
   }
-
-  @media (max-width: 768px) {
-    max-width: 100%;
-  }
-}  
+}

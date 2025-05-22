@@ -25,7 +25,7 @@ const Footer: React.FC<FooterProps> = ({ startYear, author }) => {
     <div className={styles.footer}>
       <button onClick={toggleLanguage} className={styles.languageSwitcher}>
         <span className={styles.icon}>
-          <RiTranslate2 size={20} />
+          <RiTranslate2 size={15} />
         </span>
         <span className={styles.text}>{nextLanguage}</span>
       </button>
