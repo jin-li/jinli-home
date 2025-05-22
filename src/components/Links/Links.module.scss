@@ -1,99 +1,91 @@
 .wrapper {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, 0);
+  //display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  color: white;
-  margin-bottom: 1rem;
-  //border: 1px solid white; // Uncomment for debugging
-  
-  .slide {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    height: 200px; // fixed height for carousel slide
-    width: 300%;
-    //border: 1px solid red; // Uncomment for debugging
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 1rem;
-    width: 90%;
-    height: 100%;
-    margin: 0 auto;
-    //border: 1px solid purple; // Uncomment for debugging
-  }
-
-  .tile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 6px;
-    max-height: 90px;
-    margin: 0.25rem;
-    &:hover {
-      background: rgba(155, 155, 155, 0.3);
-      transform: scale(1.1);
-    }
-    //border: 1px solid cyan; // Uncomment for debugging
-
-    .icon {
-      font-size: 2rem;
-      color: white;
-    }
-
-    .label {
-      color: white;
-      font-size: larger;
-    }
-  }
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .carousel {
+  //justify-content: center;
   position: relative;
+  width: 80%;
+  margin: 0 auto;
+  //border: 1px solid blue; // Uncomment for debugging
 
   :global {          // must use global so that it applies to the slick class
     .slick-prev,
     .slick-next {
       z-index: 2;
-      width: 40px;
-      height: 40px;
-      font-size: 24px;
+      //width: 40px;
+      //height: 40px;
+      font-size: x-large;
       font-weight: bolder;
-      color: white;
-      border-radius: 50%;
-      display: flex !important;
-      align-items: center;
-      justify-content: center;
+      //color: white;
+      //border-radius: 50%;
+      //display: flex !important;
+      //align-items: center;
+      //justify-content: center;
     }
 
     .slick-prev {
-      left: 5px;
-      top: 110px;
+      left: -5px;
+      //top: 110px;
+      //color: green;
     }
 
     .slick-next {
-      right: -20px;
-      top: 110px;
+      right: -5px;
+      //top: 110px;
+      //color: green;
     }
 
     .slick-dots {
-      bottom: -20px;
-
-      li button {
-        background: gray !important;
-      }
-
-      li.slick-active button {
-        background: #1890ff !important;
-      }
+      bottom: 0px;
     }
+  }
+}
+
+.slide {
+  //display: flex !important;
+  justify-content: center;
+  width: 100%;
+  //align-items: center;
+  //height: 200px; // fixed height for carousel slide
+  padding: 0.5rem 1rem 1rem 1rem;
+  //border: 1px solid red; // Uncomment for debugging
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 6px;
+  //width: 200px;
+  //height: 100px;
+  //max-height: 90px;
+  //margin: 0.25rem;
+  padding: 0.3rem 0rem;
+  &:hover {
+    background: rgba(155, 155, 155, 0.3);
+    transform: scale(1.1);
+  }
+  //border: 1px solid cyan; // Uncomment for debugging
+
+  .icon {
+    font-size: 2rem;
+    color: white;
+    //border: 1px solid white;
+  }
+
+  .label {
+    color: white;
+    font-size: larger;
+    //border: 1px solid white;
   }
 }

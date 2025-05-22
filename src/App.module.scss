@@ -1,14 +1,8 @@
-@use './styles/variables' as vars;
-
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  position: relative;
-}
-
-* {
-  box-sizing: border-box; /* Ensure consistent box model */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
 .container {
@@ -23,41 +17,4 @@ html, body {
   position: relative;
   margin: 0;
   padding: 0;
-  //border: 1px solid red;
-
-  &.landscape {
-    height: calc(var(--vh, 1vh) * 100); // Same for landscape mode
-    overflow: hidden; // Enable scrolling for landscape mode on mobile
-  }
-}
-
-.panels {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  flex: 1; // Ensure panels take up available vertical space
-  overflow: hidden;
-
-  @media (max-width: 768px) {
-    flex-direction: row;
-    width: 100%;
-  }
-}
-
-.panel {
-  flex: 0 0 50%; // Each panel takes 50% of the width on larger screens
-  max-width: 500px;
-  min-width: 300px;
-  text-align: center;
-  justify-content: center;
-
-  @media (max-width: 768px) {
-    flex: 0 0 100%; // Full width on mobile
-    width: 100%;
-  }
-}
-
-.hidden {
-  display: none;
 }

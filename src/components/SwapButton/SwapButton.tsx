@@ -1,19 +1,21 @@
 import React from 'react';
-import { FaAnglesRight, FaAnglesLeft } from 'react-icons/fa6'; // Import the icons
+import { FaAnglesLeft, FaAnglesRight } from 'react-icons/fa6';
 import styles from './SwapButton.module.scss';
 
-interface Props {
-  onSwap: () => void;
-  showLeft: boolean; // Add showLeft as a prop
+interface SwapButtonProps {
+  swapPanel: () => void;
+  currentPanel: 'left' | 'right';
 }
 
-const SwapButton: React.FC<Props> = ({ onSwap, showLeft }) => (
-  <button
-    onClick={onSwap}
-    className={styles.swap}
-  >
-    {showLeft ? <FaAnglesRight /> : <FaAnglesLeft />} {/* Conditionally render the icon */}
-  </button>
-);
+const SwapButton: React.FC<SwapButtonProps> = ({ swapPanel, currentPanel }) => {
+  return (
+    <button 
+      onClick={swapPanel}
+      className={styles.swap}
+    >
+      {currentPanel === 'left' ? <FaAnglesRight /> : <FaAnglesLeft />}
+    </button>
+  );
+};
 
 export default SwapButton;
