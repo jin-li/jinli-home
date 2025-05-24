@@ -12,7 +12,22 @@
   overflow-y: auto;
 
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  justify-content: center; /* Horizontally center content */
-  align-items: center; /* Vertically center content */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftpanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 50%;
+}
+
+.rightpanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
 }

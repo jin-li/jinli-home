@@ -8,7 +8,7 @@ import styles from './LeftPanel.module.scss';
 const LeftPanel: React.FC = () => {
   const { t } = useTranslation(['logo', 'description']);
   return (
-    <div className={styles.leftPanel}>
+    <div className={styles.leftside}>
       <Logo siteLogo={t('avatar', { ns: 'logo' })} />
       <Description
         descriptionText={

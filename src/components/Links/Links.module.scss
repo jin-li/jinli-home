@@ -1,5 +1,4 @@
 .wrapper {
-  //display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -9,9 +8,8 @@
 }
 
 .carousel {
-  //justify-content: center;
   position: relative;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   //border: 1px solid blue; // Uncomment for debugging
 
@@ -19,15 +17,8 @@
     .slick-prev,
     .slick-next {
       z-index: 2;
-      //width: 40px;
-      //height: 40px;
       font-size: x-large;
       font-weight: bolder;
-      //color: white;
-      //border-radius: 50%;
-      //display: flex !important;
-      //align-items: center;
-      //justify-content: center;
     }
 
     .slick-prev {
@@ -49,11 +40,8 @@
 }
 
 .slide {
-  //display: flex !important;
   justify-content: center;
   width: 100%;
-  //align-items: center;
-  //height: 200px; // fixed height for carousel slide
   padding: 0.5rem 1rem 1rem 1rem;
   //border: 1px solid red; // Uncomment for debugging
 }
@@ -66,10 +54,6 @@
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   border-radius: 6px;
-  //width: 200px;
-  //height: 100px;
-  //max-height: 90px;
-  //margin: 0.25rem;
   padding: 0.3rem 0rem;
   &:hover {
     background: rgba(155, 155, 155, 0.3);
