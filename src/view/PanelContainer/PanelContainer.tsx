@@ -41,10 +41,10 @@ const PanelContainer: React.FC = () => {
     <div className={styles.container}>
       {isDoublePanel ? (
         <>
-          <div className={styles.panel}>
+          <div className={styles.leftpanel}>
             <LeftPanel />
           </div>
-          <div className={styles.panel}>
+          <div className={styles.rightpanel}>
             <RightPanel />
           </div>
         </>

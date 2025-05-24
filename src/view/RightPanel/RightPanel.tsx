@@ -6,7 +6,7 @@ import TimeBox from '../../components/TimeBox/TimeBox';
 
 const RightPanel: React.FC = () => {
   return (
-    <div className={styles.rightPanel}>
+    <div className={styles.rightside}>
       <TimeBox />
       <Links />
     </div>
