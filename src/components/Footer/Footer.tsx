@@ -11,15 +11,17 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ startYear, author }) => {
   const { t, i18n } = useTranslation('ui'); // Use the 'ui' namespace
   const currentYear = new Date().getFullYear();
+  // Normalize language to base language, e.g., 'zh' instead of 'zh-CN'
+  const baseLanguage = i18n.language.split('-')[0];
 
   // Function to toggle the language
   const toggleLanguage = () => {
-    const newLanguage = i18n.language === 'en' ? 'zh' : 'en';
+    const newLanguage = baseLanguage === 'en' ? 'zh' : 'en';
     i18n.changeLanguage(newLanguage);
   };
 
   // Show the language to switch to
-  const nextLanguage = i18n.language === 'en' ? '简体中文' : 'English';
+  const nextLanguage = baseLanguage === 'en' ? '简体中文' : 'English';
 
   return (
     <div className={styles.footer}>
