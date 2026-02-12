@@ -3,42 +3,42 @@
     {
       "label": "github",
       "name": "Github",
-      "icon": "/images/icon/github.png",
+      "icon": "FaGithub",
       "tip": "Find awesome projects!",
       "url": "https://github.com/jin-li"
     },
     {
       "label": "googlescholar",
       "name": "Google Scholar",
-      "icon": "/images/icon/google-scholar.png",
+      "icon": "FaGoogleScholar",
       "tip": "I love research!",
       "url": "https://scholar.google.com/citations?user=TlaZPfoAAAAJ&hl=en&authuser=2"
     },
     {
       "label": "linkedin",
       "name": "LinkedIn",
-      "icon": "/images/icon/linkedin.png",
+      "icon": "FaLinkedin",
       "tip": "Any good jobs for me?",
       "url": "https://www.linkedin.com/in/jinli-io/"
     },
     {
       "label": "bilibili",
       "name": "BiliBili",
-      "icon": "/images/icon/bilibili.png",
+      "icon": "FaBilibili",
       "tip": "(゜-゜)つロ Cheers!",
       "url": "https://space.bilibili.com/3493275403028517"
     },
     {
       "label": "youtube",
       "name": "Youtube",
-      "icon": "/images/icon/youtube.png",
+      "icon": "FaYoutube",
       "tip": "Watch awesome videos!",
       "url": "https://www.youtube.com/@JinLi-233"
     },
     {
       "label": "email",
       "name": "Email",
-      "icon": "/images/icon/email.png",
+      "icon": "FaEnvelope",
       "tip": "Feel free to contact me!",
       "url": "mailto:i@jinli.io"
     }
