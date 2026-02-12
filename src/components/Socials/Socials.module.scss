@@ -47,6 +47,13 @@
         margin: 0 5px;
         transition: transform 0.3s;
 
+        img {
+          width: 1.5rem;
+          height: 1.5rem;
+          object-fit: contain;
+          display: block;
+        }
+
         &:hover {
           transform: scale(1.1);
         }

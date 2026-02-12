@@ -1,20 +1,21 @@
 import React from 'react';
 import { Carousel, Row, Col } from 'antd';
-import { FaBlog, FaCloud, FaGitlab, FaClapperboard, FaBook, FaImages, FaPen, FaEnvelopesBulk, FaAnglesUp, FaServer } from "react-icons/fa6";
+import * as FaIcons from "react-icons/fa6";
+import type { IconType } from "react-icons";
 import styles from './Links.module.scss';
 import { useTranslation } from 'react-i18next';
 
-const iconMap: { [key: string]: React.ReactNode } = {
-  "blog": <FaBlog />,
-  "cloud": <FaCloud />,
-  "git": <FaGitlab />,
-  "media": <FaClapperboard />,
-  "library": <FaBook />,
-  "image": <FaImages />,
-  "latex": <FaPen />,
-  "mail": <FaEnvelopesBulk />,
-  "update": <FaAnglesUp />,
-  "monitor": <FaServer />
+const resolveIcon = (icon?: string): React.ReactNode => {
+  if (!icon) {
+    return null;
+  }
+
+  const Icon = (FaIcons as Record<string, IconType>)[icon];
+  if (Icon) {
+    return <Icon />;
+  }
+
+  return <img src={icon} alt="" />;
 };
 
 const chunkArray = (arr: any[], size: number) =>
@@ -58,7 +59,7 @@ const RightPanel: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <div className={styles.icon}> {iconMap[item.label]} </div>
+                    <div className={styles.icon}>{resolveIcon(item.icon)}</div>
                     <div className={styles.label}>{item.name}</div>
                   </a>
                 </Col>

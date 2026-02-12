@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Socials.module.scss";
-import { FaGithub, FaGoogleScholar, FaLinkedin, FaBilibili, FaYoutube, FaEnvelope } from "react-icons/fa6";
+import * as FaIcons from "react-icons/fa6";
+import type { IconType } from "react-icons";
 import { useTranslation } from "react-i18next";
 
 interface Social {
@@ -11,13 +12,17 @@ interface Social {
   url: string;
 }
 
-const iconMap: { [key: string]: React.ReactNode } = {
-  "github": <FaGithub />,
-  "googlescholar": <FaGoogleScholar />,
-  "linkedin": <FaLinkedin />,
-  "bilibili": <FaBilibili />,
-  "youtube": <FaYoutube />,
-  "email": <FaEnvelope />,
+const resolveIcon = (icon?: string): React.ReactNode => {
+  if (!icon) {
+    return null;
+  }
+
+  const Icon = (FaIcons as Record<string, IconType>)[icon];
+  if (Icon) {
+    return <Icon />;
+  }
+
+  return <img src={icon} alt="" />;
 };
 
 const Socials: React.FC = () => {
@@ -38,7 +43,7 @@ const Socials: React.FC = () => {
             onMouseEnter={() => setSocialTip(item.tip)}
             onMouseLeave={() => setSocialTip("")}
           >
-            <div className={styles.icon}>{ iconMap[item.label] }</div>
+            <div className={styles.icon}>{resolveIcon(item.icon)}</div>
           </a>
         ))}
       </div>
