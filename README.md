@@ -8,6 +8,8 @@ This is a light-weight, elegant and customizable homepage with multi-language (i
 
 ![demo](./demo/jinli-home-demo-small-hi.gif)
 
+[Live Demo](https://jinli.io)
+
 ## Features
 
 - **Light-weight**: The homepage is designed to be simple and easy to use, with minimal dependencies.
