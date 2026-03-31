@@ -7,6 +7,18 @@
       "url": "https://blog.jinli.io"
     },
     {
+        "label": "chatbot",
+        "name": "AI聊天",
+        "icon": "FaRobot",
+        "url": "https://chat.jinli.io"
+    },
+    {
+        "label": "writing",
+        "name": "写作",
+        "icon": "FaMarkdown",
+        "url": "https://md.jinli.io"
+    },
+    {
       "label": "cloud",
       "name": "云网盘",
       "icon": "FaCloud",
