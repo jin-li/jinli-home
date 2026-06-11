@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Socials.module.scss";
 import * as FaIcons from "react-icons/fa6";
+import * as TbIcons from "react-icons/tb";
 import type { IconType } from "react-icons";
 import { useTranslation } from "react-i18next";
 
@@ -12,15 +13,25 @@ interface Social {
   url: string;
 }
 
+const iconLibs: Record<string, Record<string, IconType>> = {
+  Fa: FaIcons as Record<string, IconType>,
+  Tb: TbIcons as Record<string, IconType>,
+};
+
 const resolveIcon = (icon?: string): React.ReactNode => {
   if (!icon) {
     return null;
   }
 
-  const Icon = (FaIcons as Record<string, IconType>)[icon];
-  if (Icon) {
-    return <Icon />;
+  const prefix = icon.slice(0, 2);
+  const lib = iconLibs[prefix];
+  if (lib) {
+    const Icon = lib[icon];
+    if (Icon) return <Icon />;
   }
+
+  const fallback = (FaIcons as Record<string, IconType>)[icon];
+  if (fallback) return <fallback />;
 
   return <img src={icon} alt="" />;
 };
