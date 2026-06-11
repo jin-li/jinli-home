@@ -36,6 +36,13 @@
       "url": "https://www.youtube.com/@JinLi-233"
     },
     {
+      "label": "cv",
+      "name": "CV",
+      "icon": "TbFileCv",
+      "tip": "Check out my CV!",
+      "url": "https://cv.jinli.io"
+    },
+    {
       "label": "email",
       "name": "Email",
       "icon": "FaEnvelope",
