@@ -30,8 +30,8 @@ const resolveIcon = (icon?: string): React.ReactNode => {
     if (Icon) return <Icon />;
   }
 
-  const fallback = (FaIcons as Record<string, IconType>)[icon];
-  if (fallback) return <fallback />;
+  const FallbackIcon = (FaIcons as Record<string, IconType>)[icon];
+  if (FallbackIcon) return <FallbackIcon />;
 
   return <img src={icon} alt="" />;
 };
