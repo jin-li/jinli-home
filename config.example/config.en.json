@@ -1,0 +1,32 @@
+{
+  "site": {
+    "title": "Your Name",
+    "author": "Your Name",
+    "startYear": "2024",
+    "description": "A personal homepage",
+    "keywords": ["personal homepage"],
+    "favicon": "/config/favicon.ico",
+    "appleTouchIcon": "/config/logo192.png",
+    "background": "/config/background.jpg",
+    "logoUrl": "/config/avatar.jpg",
+    "slogan": "Your slogan",
+    "hello": "Your greeting"
+  },
+  "socials": [
+    {
+      "label": "github",
+      "name": "GitHub",
+      "icon": "FaGithub",
+      "tip": "My projects",
+      "url": "https://github.com/your-username"
+    }
+  ],
+  "links": [
+    {
+      "label": "website",
+      "name": "My Website",
+      "icon": "FaGlobe",
+      "url": "https://example.com"
+    }
+  ]
+}

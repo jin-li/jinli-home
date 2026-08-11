@@ -14,7 +14,7 @@ This is a light-weight, elegant and customizable homepage with multi-language (i
 
 - **Light-weight**: The homepage is designed to be simple and easy to use, with minimal dependencies.
 - **Elegant**: The homepage has a clean and modern design, with a focus on readability and usability.
-- **Customizable**: The homepage can be easily customized with JSON or YAML to fit your personal style and preferences.
+- **Customizable**: The homepage can be customized with a mounted JSON configuration directory, without rebuilding the image.
 - **Multi-language support**: The homepage supports multiple languages, making it accessible to a wider audience.
 - **Responsive design**: The homepage is designed to be responsive, ensuring that it looks great on all devices, from desktops to mobile phones.
 - **Technology stack**: The homepage is built using React, Vite, and Ant Design with TypeScript, making it fast and elegant.
@@ -27,11 +27,20 @@ This is a light-weight, elegant and customizable homepage with multi-language (i
 ```bash
 git clone https://github.com/jin-li/jinli-homepage.git
 cd jinli-homepage
+cp -R config.example config
 docker compose build
 docker compose up -d
 ```
 
 By default, the homepage will be served at `http://localhost:12444`. You can change the port by modifying the `docker-compose.yml` file.
+
+To use a published image directly, create the configuration directory from `config.example` and mount it into the container:
+
+```bash
+docker run --rm -p 12444:3000 \
+  -v "$(pwd)/config:/app/config:ro" \
+  ghcr.io/your-github-user/jinli-home:latest
+```
 
 ### Serve Locally
 
@@ -60,47 +69,29 @@ serve -s dist
 
 ## Customization
 
-The homepage is highly customizable. The configuration files are located in the `public/locales` directory. The structure of the `public` directory is as follows:
+The homepage loads personal content at runtime from `/config/config.<language>.json`. This allows the same Docker image to be used by different people without rebuilding it.
 
 ```sh
-public
-├── assets
-│   ├── avatar.jpg               # your profile avatar
-│   ├── bg.jpg                   # background image
-│   ├── favicon.ico              # site icon appears on the browser tab
-│   └── logo192.png
-└── locales
-    ├── en
-    │   ├── description.json     # slogan/description
-    │   ├── footer.json          # footer of the page
-    │   ├── links.json           # links to your own application or websites
-    │   ├── logo.json            # avatar logo
-    │   ├── site.json            # site configuration, including author, background, etc.
-    │   ├── socials.json         # social media icons and links， icons are from react-icons fa6
-    │   ├── time.json            # time box
-    │   └── ui.json              # copyright message
-    └── zh
-        ├── description.json
-        ├── footer.json
-        ├── links.json
-        ├── logo.json
-        ├── site.json
-        ├── socials.json
-        ├── time.json
-        └── ui.json
+config.example/
+├── config.en.json
+└── config.zh.json
 ```
-- `assets`: This directory contains the static assets for the homepage, such as images and icons.
-- `locales`: This directory contains the localization files for the homepage. Each language has its own subdirectory, such as `en` for English and `zh` for Chinese. Each subdirectory contains JSON files for different sections of the homepage, such as `description.json`, `footer.json`, and `links.json`.
 
-You can customize the homepage by modifying these JSON files or adding/replacing images in the `assets` directory.
+Copy the example directory, then edit the files without rebuilding the image:
 
-The icons used in this project are from the [React Icons](https://react-icons.github.io/react-icons/) library, specifically from the Font Awesome 6 (fa6) collection: 
+```bash
+cp -R config.example config
+```
+
+`config/` is ignored by Git and by Docker builds. Each language has its own readable JSON file containing site metadata, social links, and homepage links. The language switcher loads the matching file at runtime. Browser locales such as `zh-CN` use `config.zh.json`.
+
+You can place custom images in the same directory and reference them as `/config/avatar.jpg`, `/config/background.jpg`, and so on. The default image contains generic fallback configurations in `/default-config`, which are used when a mounted config file is absent.
+
+The icons used in this project are from the [React Icons](https://react-icons.github.io/react-icons/) library, specifically from the Font Awesome 6 (fa6) collection:
 
 ![react-icons](./demo/react-icons-fa6.png)
 
-The social media icons and links are configured in the `socials.json` and `links.json` files located in the `public/locales/en` and `public/locales/zh` directories. If you want to change or add new social media icons or links, you can search icons on the [React Icons](https://react-icons.github.io/react-icons/) library and use the corresponding icon names in the `socials.json` file.
-
-You need to rebuild the project after modifying the configuration files.
+The social media icons and links are configured in each `config/config.<language>.json` file. You can search available icon names in the [React Icons](https://react-icons.github.io/react-icons/) library and use the corresponding Font Awesome 6 (`fa6`) icon name.
 
 ## Issues or Feature Requests
 

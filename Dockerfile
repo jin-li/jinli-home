@@ -28,6 +28,9 @@ WORKDIR /app
 # Copy the built files from the builder stage
 COPY --from=builder /app/dist .
 
+# Users can mount their runtime configuration here without rebuilding the image.
+RUN mkdir -p /app/config
+
 # Expose port 3000
 EXPOSE 3000
 

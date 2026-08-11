@@ -12,8 +12,10 @@ i18n
       loadPath: '/locales/{{lng}}/{{ns}}.json', // Path to YAML files
     },
     fallbackLng: 'en', // Default language
-    ns: ['ui', 'site', 'logo', 'description', 'socials', 'time', 'links', 'footer'], // Define namespaces
+    ns: ['ui', 'time'], // UI-only translations bundled with the template
     defaultNS: 'ui', // Default namespace
+    supportedLngs: ['en', 'zh'],
+    load: 'languageOnly',
     interpolation: {
       escapeValue: false, // React already escapes values
     },

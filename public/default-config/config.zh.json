@@ -1,0 +1,32 @@
+{
+  "site": {
+    "title": "你的名字",
+    "author": "你的名字",
+    "startYear": "2024",
+    "description": "个人主页",
+    "keywords": ["个人主页"],
+    "favicon": "/assets/favicon.ico",
+    "appleTouchIcon": "/assets/logo192.png",
+    "background": "/assets/bg.jpg",
+    "logoUrl": "/assets/avatar.jpg",
+    "slogan": "欢迎来到我的主页。",
+    "hello": "通过挂载配置目录，将这里替换成你的个人信息。"
+  },
+  "socials": [
+    {
+      "label": "github",
+      "name": "GitHub",
+      "icon": "FaGithub",
+      "tip": "我的项目",
+      "url": "https://github.com/your-username"
+    }
+  ],
+  "links": [
+    {
+      "label": "website",
+      "name": "我的网站",
+      "icon": "FaGlobe",
+      "url": "https://example.com"
+    }
+  ]
+}

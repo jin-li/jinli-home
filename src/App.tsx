@@ -1,33 +1,34 @@
 import React from 'react';
 import PanelContainer from './view/PanelContainer/PanelContainer';
 import Footer from './components/Footer/Footer';
-import { useTranslation } from 'react-i18next';
 import styles from './App.module.scss';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
+import { useConfig } from './config';
 
 const App: React.FC = () => {
-  const { t, i18n } = useTranslation(['site', 'footer']);
+  const { config } = useConfig();
+  const { i18n } = useTranslation();
 
-  const backgroundUrl = t('background', {ns: 'site'}) || './assets/bg.jpg'; // Default background image
   const containerStyle = {
-    background: `url(${backgroundUrl}) no-repeat center center`,
+    background: `url(${config.site.background}) no-repeat center center`,
     backgroundSize: 'cover',
   };
 
   return (
     <>
       <Helmet>
-        <html lang={i18n.language} />
-        <title>{t('title', {ns: 'site'})}</title>
-        <meta name="description" content={t('description', {ns: 'site'})} />
-        <meta name="keywords" content={t('keywords', {ns: 'site'})} />
-        <meta name="author" content={t('author', {ns: 'site'})} />
-        <link id="favicon" rel="icon" href={t('favicon', {ns: 'site'})} type="image/x-icon" />
-        <link rel="apple-touch-icon" href={t('apple_touch_icon', {ns: 'site'})} />
+        <html lang={i18n.resolvedLanguage || i18n.language} />
+        <title>{config.site.title}</title>
+        <meta name="description" content={config.site.description} />
+        <meta name="keywords" content={config.site.keywords.join(', ')} />
+        <meta name="author" content={config.site.author} />
+        <link id="favicon" rel="icon" href={config.site.favicon} type="image/x-icon" />
+        <link rel="apple-touch-icon" href={config.site.appleTouchIcon} />
       </Helmet>
       <div className={styles.container} style={containerStyle}>
         <PanelContainer />
-        <Footer startYear={t("start_year", {ns: 'footer'})} author={t("author", {ns: 'footer'})} />
+        <Footer startYear={config.site.startYear} author={config.site.author} />
       </div>
     </>
   );

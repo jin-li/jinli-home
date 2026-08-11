@@ -1,0 +1,32 @@
+{
+  "site": {
+    "title": "你的名字",
+    "author": "你的名字",
+    "startYear": "2024",
+    "description": "个人主页",
+    "keywords": ["个人主页"],
+    "favicon": "/config/favicon.ico",
+    "appleTouchIcon": "/config/logo192.png",
+    "background": "/config/background.jpg",
+    "logoUrl": "/config/avatar.jpg",
+    "slogan": "你的标语",
+    "hello": "你的欢迎语"
+  },
+  "socials": [
+    {
+      "label": "github",
+      "name": "GitHub",
+      "icon": "FaGithub",
+      "tip": "我的项目",
+      "url": "https://github.com/your-username"
+    }
+  ],
+  "links": [
+    {
+      "label": "website",
+      "name": "我的网站",
+      "icon": "FaGlobe",
+      "url": "https://example.com"
+    }
+  ]
+}

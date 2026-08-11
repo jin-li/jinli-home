@@ -3,7 +3,7 @@ import styles from "./Socials.module.scss";
 import * as FaIcons from "react-icons/fa6";
 import * as TbIcons from "react-icons/tb";
 import type { IconType } from "react-icons";
-import { useTranslation } from "react-i18next";
+import { useConfig } from '../../config';
 
 interface Social {
   label: string;
@@ -37,8 +37,8 @@ const resolveIcon = (icon?: string): React.ReactNode => {
 };
 
 const Socials: React.FC = () => {
-  const { t } = useTranslation(['socials']);
-  const socials = t('socials', { returnObjects: true }) as Array<Social>;
+  const { config } = useConfig();
+  const socials = config.socials;
 
   const [socialTip, setSocialTip] = useState("");
 

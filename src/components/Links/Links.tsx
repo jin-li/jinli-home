@@ -3,7 +3,7 @@ import { Carousel, Row, Col } from 'antd';
 import * as FaIcons from "react-icons/fa6";
 import type { IconType } from "react-icons";
 import styles from './Links.module.scss';
-import { useTranslation } from 'react-i18next';
+import { useConfig } from '../../config';
 
 const resolveIcon = (icon?: string): React.ReactNode => {
   if (!icon) {
@@ -18,19 +18,21 @@ const resolveIcon = (icon?: string): React.ReactNode => {
   return <img src={icon} alt="" />;
 };
 
-const chunkArray = (arr: any[], size: number) =>
+interface LinkItem {
+  label: string;
+  name: string;
+  icon: string;
+  url: string;
+}
+
+const chunkArray = (arr: LinkItem[], size: number) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
     arr.slice(i * size, i * size + size)
   );
 
 const RightPanel: React.FC = () => {
-  const { t } = useTranslation('links');
-  const links = t('links', { returnObjects: true }) as Array<{
-    label: string;
-    name: string;
-    icon: string;
-    url: string;
-  }>;
+  const { config } = useConfig();
+  const links = config.links;
 
   const pages = chunkArray(links, 6);
 
@@ -50,7 +52,7 @@ const RightPanel: React.FC = () => {
               gutter={[12, 12]}
               justify="center"
             >
-              {page.map((item: any, idx: any) => (
+              {page.map((item: LinkItem, idx: number) => (
                 <Col key={item.label} style={{ width: '33.33%'}}>
                   <a
                     className={styles.tile}

@@ -14,7 +14,7 @@
 
 - **轻量**：主页设计简洁，依赖最小化，开箱即用。
 - **优雅**：界面清爽现代，注重可读性与可用性。
-- **可自定义**：可通过 JSON 或 YAML 轻松定制，打造你的个人风格。
+- **可自定义**：通过可挂载的 JSON 配置目录轻松定制，打造你的个人风格。
 - **多语言支持**：支持多语言，便于面向更广泛用户。
 - **响应式设计**：兼容桌面端与移动端等不同设备。
 - **技术栈**：基于 React、Vite、Ant Design 与 TypeScript，兼顾速度与体验。
@@ -27,6 +27,7 @@
 ```bash
 git clone https://github.com/jin-li/jinli-homepage.git
 cd jinli-homepage
+cp -R config.example config
 docker compose build
 docker compose up -d
 ```
@@ -60,49 +61,29 @@ serve -s dist
 
 ## 自定义配置
 
-本主页高度可定制。配置文件位于 `public/locales` 目录。`public` 目录结构如下：
+主页会在运行时从 `/config/config.<language>.json` 读取个人内容，因此不同用户可以直接使用同一个 Docker 镜像，无需重新构建。
 
 ```sh
-public
-├── assets
-│   ├── avatar.jpg               # 你的头像
-│   ├── bg.jpg                   # 背景图
-│   ├── favicon.ico              # 浏览器标签页图标
-│   └── logo192.png
-└── locales
-    ├── en
-    │   ├── description.json     # 标语/简介
-    │   ├── footer.json          # 页脚
-    │   ├── links.json           # 你的应用或网站链接
-    │   ├── logo.json            # 头像 logo
-    │   ├── site.json            # 站点配置（作者、背景等）
-    │   ├── socials.json         # 社交图标与链接，图标来自 react-icons fa6
-    │   ├── time.json            # 时间模块
-    │   └── ui.json              # 版权信息
-    └── zh
-        ├── description.json
-        ├── footer.json
-        ├── links.json
-        ├── logo.json
-        ├── site.json
-        ├── socials.json
-        ├── time.json
-        └── ui.json
+config.example/
+├── config.en.json
+└── config.zh.json
 ```
 
-- `assets`：用于存放主页静态资源，如图片与图标。
-- `locales`：用于存放多语言配置。每种语言一个子目录（如 `en`、`zh`），每个子目录按模块拆分 JSON 文件，如 `description.json`、`footer.json`、`links.json` 等。
+先复制示例目录，再编辑自己的配置：
 
-你可以通过修改这些 JSON 配置文件，或替换 `assets` 下的图片来定制主页。
+```bash
+cp -R config.example config
+```
+
+`config/` 已被 Git 和 Docker 构建忽略。每种语言使用一个易读的 JSON 文件，包含站点元数据、社交链接和主页链接。语言切换器会在运行时加载对应文件；例如 `zh-CN` 会使用 `config.zh.json`。
+
+可以把自定义图片放入同一目录，并在配置中使用 `/config/avatar.jpg`、`/config/background.jpg` 等路径。镜像内包含 `/default-config` 的通用回退配置；没有挂载匹配文件时会显示该配置。
 
 本项目使用的图标来自 [React Icons](https://react-icons.github.io/react-icons/) 库，具体为 Font Awesome 6（fa6）图标集合：
 
 ![react-icons](./demo/react-icons-fa6.png)
 
-社交图标与链接配置在 `public/locales/en` 和 `public/locales/zh` 下的 `socials.json` 与 `links.json` 中。
-如果你想新增或修改社交图标/链接，可以在 [React Icons](https://react-icons.github.io/react-icons/) 中搜索图标，并在 JSON 文件中填写对应图标名。
-
-修改配置后需要重新构建项目。
+社交图标与链接配置在各语言的 `config/config.<language>.json` 文件中。如果想新增或修改图标，可以在 [React Icons](https://react-icons.github.io/react-icons/) 中搜索，并填写对应 Font Awesome 6（`fa6`）图标名。
 
 ## 问题反馈与功能建议
 
@@ -126,7 +107,9 @@ public
 ./
 ├── public
 │   ├── assets            # 背景、头像、站点图标
-│   └── locales           # 站点配置，按语言分类
+│   ├── default-config    # 通用回退配置
+│   └── locales           # UI 与时间的翻译文件
+├── config.example        # 可复制的运行时配置示例
 └── src
     ├── main.tsx          # React 默认入口
     ├── index.css         # React 默认样式
